@@ -13,6 +13,14 @@ import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Page = () => {
+  return (
+    <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
+      <Search />
+    </Suspense>
+  );
+};
+
+const Search = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const dispatch: AppDispatch = useDispatch();
@@ -62,9 +70,7 @@ const Page = () => {
 
         <ComicTitle title={titlePage} orientation="center" loading={loading} />
 
-        <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-          <ComicList data={items} loading={loading} />
-        </Suspense>
+        <ComicList data={items} loading={loading} />
 
         {items?.length >= 24 && (
           <Pagination
