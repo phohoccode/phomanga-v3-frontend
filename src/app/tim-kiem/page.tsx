@@ -52,38 +52,34 @@ const Page = () => {
   }
 
   return (
-    <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-      <Layout>
-        <div className="flex flex-col gap-2">
-          {loading ? (
-            <Skeleton.Input size="small" style={{ width: "260px" }} />
-          ) : (
-            <Breadcrumb items={breadCrumb} />
-          )}
+    <Layout>
+      <div className="flex flex-col gap-2">
+        {loading ? (
+          <Skeleton.Input size="small" style={{ width: "260px" }} />
+        ) : (
+          <Breadcrumb items={breadCrumb} />
+        )}
 
-          <ComicTitle
-            title={titlePage}
-            orientation="center"
-            loading={loading}
-          />
+        <ComicTitle title={titlePage} orientation="center" loading={loading} />
 
+        <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
           <ComicList data={items} loading={loading} />
+        </Suspense>
 
-          {items?.length >= 24 && (
-            <Pagination
-              style={{ marginTop: "48px" }}
-              align="center"
-              onChange={handleChangePage}
-              showTitle={true}
-              showSizeChanger={false}
-              current={Number(currentPage)}
-              total={totalItems}
-              pageSize={itemsPerPage}
-            />
-          )}
-        </div>
-      </Layout>
-    </Suspense>
+        {items?.length >= 24 && (
+          <Pagination
+            style={{ marginTop: "48px" }}
+            align="center"
+            onChange={handleChangePage}
+            showTitle={true}
+            showSizeChanger={false}
+            current={Number(currentPage)}
+            total={totalItems}
+            pageSize={itemsPerPage}
+          />
+        )}
+      </div>
+    </Layout>
   );
 };
 
