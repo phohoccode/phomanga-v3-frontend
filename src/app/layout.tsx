@@ -8,7 +8,6 @@ import NavBar from "@/components/layout/header/NavBar";
 import NavBarMobile from "@/components/layout/header/NavBarMobile";
 import Footer from "@/components/layout/Footer";
 import DisplayNotification from "@/components/DisplayNotification";
-import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
