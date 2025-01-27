@@ -20,6 +20,10 @@ export async function middleware(request: NextRequest) {
   const token = await getToken({
     req: request,
     secret: process.env.NEXTAUTH_SECRET,
+    cookieName:
+      process.env.VERCEL_ENV === "development"
+        ? "next-auth.session-token"
+        : "__Secure-next-auth.session-token",
   });
 
   // Kiểm tra path trang có nhân động
