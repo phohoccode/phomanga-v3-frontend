@@ -11,7 +11,7 @@ import { CheckCircleFilled } from "@ant-design/icons";
 import { Divider } from "antd";
 import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const SystemNotification = () => {
