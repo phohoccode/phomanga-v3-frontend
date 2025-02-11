@@ -5,8 +5,9 @@ import { socket } from "@/lib/socket";
 import { getComments } from "@/store/asyncThunk/commentAsyncThunk";
 import { AppDispatch, RootState } from "@/store/store";
 import { useParams } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Spinner from "./common/Spinner";
 
 const RefreshData = ({ children }: { children: React.ReactNode }) => {
   const params = useParams();
@@ -37,7 +38,7 @@ const RefreshData = ({ children }: { children: React.ReactNode }) => {
     );
   };
 
-  return <>{children}</>;
+  return <Suspense fallback={<Spinner />}>{children}</Suspense>;
 };
 
 export default RefreshData;
