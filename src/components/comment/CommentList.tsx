@@ -12,6 +12,7 @@ import { getComments } from "@/store/asyncThunk/commentAsyncThunk";
 import { setCurrentPage } from "@/store/slices/commentSlice";
 import useGetQuery from "@/hooks/useGetQuery";
 import { scrollToCurrentElement } from "@/lib/utils";
+import { socket } from "@/lib/socket";
 
 const CommentList = ({ isScroll = false }: { isScroll?: boolean }) => {
   const { items, loading, totalItems, sort } = useSelector(
@@ -23,6 +24,18 @@ const CommentList = ({ isScroll = false }: { isScroll?: boolean }) => {
   const searchParams = useSearchParams();
   const currentPage = useGetQuery("comment_page", "1", "number");
   const currentScrollRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    socket.on("refreshComments", (res) => {
+      if (res?.slug === params?.slug) {
+        handleGetComments();
+      }
+    });
+
+    return () => {
+      socket.off("refreshComments");
+    };
+  }, []);
 
   useEffect(() => {
     handleGetComments();
