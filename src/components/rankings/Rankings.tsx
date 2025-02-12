@@ -8,8 +8,7 @@ import { getUserRankings } from "@/lib/actions";
 import SkeletonRankings from "../skeleton/SkeletonRankings";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { scrollToCurrentElement } from "@/lib/utils";
-import { CrownOutlined } from "@ant-design/icons";
+import { TrophyOutlined } from "@ant-design/icons";
 
 const Rankings = () => {
   const [criterion, setCriterion] = useState<criterion>("vip_level");
@@ -81,11 +80,8 @@ const Rankings = () => {
 
   return (
     <div className="my-8" ref={currentScrollRef}>
-      <Divider
-        orientation="center"
-        style={{ marginBottom: "32px"}}
-      >
-        <CrownOutlined className="mr-1"/>
+      <Divider orientation="center" style={{ marginBottom: "32px" }}>
+        <TrophyOutlined className="mr-1" />
         Bảng xếp hạng
       </Divider>
       <Tabs

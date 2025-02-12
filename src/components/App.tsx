@@ -81,47 +81,43 @@ const App = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <DisplayNotification>
-      {/* <Suspense fallback={<Spinner />}> */}
-        {/* <RefreshData> */}
-          <NavBar />
-          {loaded && <NavBarMobile />}
-          {children}
-          <Footer />
-          <DrawerUser />
+      <NavBar />
+      {loaded && <NavBarMobile />}
+      {children}
+      <Footer />
+      <DrawerUser />
 
-          <ModalSearch
-            isModalOpen={showModalSearch}
-            onCancel={() => dispatch(setShowModalSearch(false))}
-          />
+      <ModalSearch
+        isModalOpen={showModalSearch}
+        onCancel={() => dispatch(setShowModalSearch(false))}
+      />
 
-          <ModalCategorys
-            isModalOpen={showModalCategorys}
-            onCancel={() => dispatch(setShowModalCategorys(false))}
-          />
+      <ModalCategorys
+        isModalOpen={showModalCategorys}
+        onCancel={() => dispatch(setShowModalCategorys(false))}
+      />
 
-          <ModalNotification
-            isModalOpen={showModalNotification}
-            onCancel={() => dispatch(setShowModalNotification(false))}
-          />
+      <ModalNotification
+        isModalOpen={showModalNotification}
+        onCancel={() => dispatch(setShowModalNotification(false))}
+      />
 
-          <ModalComment
-            isModalOpen={showModalComment}
-            onCancel={() => dispatch(setShowModalComment(false))}
-          />
+      <ModalComment
+        isModalOpen={showModalComment}
+        onCancel={() => dispatch(setShowModalComment(false))}
+      />
 
-          <ModalUserFeedback
-            isModalOpen={showModalUserFeedback}
-            onCancel={() => dispatch(setShowModalUserFeedback(false))}
-          />
+      <ModalUserFeedback
+        isModalOpen={showModalUserFeedback}
+        onCancel={() => dispatch(setShowModalUserFeedback(false))}
+      />
 
-          <ModalUpgradeLevelVip
-            isModalOpen={showModalUpgradeLevelVip}
-            onCancel={() => dispatch(setShowModalUpgradeLevelVip(false))}
-          />
+      <ModalUpgradeLevelVip
+        isModalOpen={showModalUpgradeLevelVip}
+        onCancel={() => dispatch(setShowModalUpgradeLevelVip(false))}
+      />
 
-          {!isVisiable && <FloatButtonGroup />}
-        {/* </RefreshData> */}
-      {/* </Suspense> */}
+      {!isVisiable && <FloatButtonGroup />}
     </DisplayNotification>
   );
 };
