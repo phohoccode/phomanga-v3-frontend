@@ -26,8 +26,6 @@ import ModalComment from "./modals/ModalComment";
 import ModalUserFeedback from "./modals/ModalUserFeedback";
 import ModalUpgradeLevelVip from "./modals/modal-upgrade-level-vip/ModalUpgradeLevelVip";
 import FloatButtonGroup from "./FloatButtonGroup";
-// import RefreshData from "./RefreshData";
-// import Spinner from "./common/Spinner";
 
 const App = ({ children }: { children: React.ReactNode }) => {
   const dispatch: AppDispatch = useDispatch();

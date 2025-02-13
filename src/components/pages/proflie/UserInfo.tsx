@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import { Descriptions, Tag } from "antd";
-import { DescriptionsProps, Skeleton } from "antd";
 import { formatDate, getColorVipLevel } from "@/lib/utils";
 import UpgradeLevelVip from "./button/UpgradeLevelVip";
 import DescriptionTitle from "@/components/common/DescriptionTitle";
 import { UserOutlined } from "@ant-design/icons";
+import { DescriptionsProps, Skeleton, Descriptions, Tag } from "antd";
 
 export interface UserInfoProps {
   dataUserInfo: {

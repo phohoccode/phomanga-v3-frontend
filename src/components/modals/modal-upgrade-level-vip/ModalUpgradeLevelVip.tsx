@@ -1,12 +1,12 @@
 "use client";
 
-import { Col, Row } from "antd";
 import RootModal from "../RootModal";
 import CardListLevelVip from "./CardListLevelVip";
-import { ThunderboltOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import Payment from "./Payment";
 import { useSession } from "next-auth/react";
+import { Col, Row } from "antd";
+import { ThunderboltOutlined } from "@ant-design/icons";
 
 export interface VipLevel {
   index: number;

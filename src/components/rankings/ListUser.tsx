@@ -1,11 +1,11 @@
 "use client";
 
-import { Avatar, Col, Row, Tag, Tooltip } from "antd";
 import EmptyData from "../common/EmptyData";
 import Link from "next/link";
 import { getColorVipLevel } from "@/lib/utils";
 import { ListUserProps } from "@/lib/types";
 import { useSession } from "next-auth/react";
+import { Avatar, Col, Row, Tag, Tooltip } from "antd";
 
 const ListUser = ({ users, criterion }: ListUserProps) => {
   const { data: session }: any = useSession();

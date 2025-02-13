@@ -1,13 +1,13 @@
 "use client";
 
 import { criterion, ListUserProps } from "@/lib/types";
-import { Divider, Tabs, TabsProps } from "antd";
 import { useEffect, useRef, useState } from "react";
 import ListUser from "./ListUser";
 import { getUserRankings } from "@/lib/actions";
 import SkeletonRankings from "../skeleton/SkeletonRankings";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { Divider, Tabs, TabsProps } from "antd";
 import { TrophyOutlined } from "@ant-design/icons";
 
 const Rankings = () => {

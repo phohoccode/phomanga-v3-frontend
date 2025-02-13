@@ -2,11 +2,11 @@
 
 import DescriptionTitle from "@/components/common/DescriptionTitle";
 import { getColorVipLevel, scrollToCurrentElement } from "@/lib/utils";
-import { BankOutlined, ThunderboltOutlined } from "@ant-design/icons";
-import { Button, Descriptions, DescriptionsProps, Skeleton, Tag } from "antd";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { Button, Descriptions, DescriptionsProps, Skeleton, Tag } from "antd";
+import { BankOutlined, ThunderboltOutlined } from "@ant-design/icons";
 
 interface PaymentProps {
   data: {

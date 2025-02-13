@@ -3,8 +3,8 @@ import Layout from "@/components/layout/Layout";
 import Statistical from "@/components/pages/proflie/Statistical";
 import UserInfo from "@/components/pages/proflie/UserInfo";
 import { getAllVipLevel, getUserInfo, getUserStatistical } from "@/lib/actions";
-import { Breadcrumb, Col, Row } from "antd";
 import Link from "next/link";
+import { Breadcrumb, Col, Row } from "antd";
 
 const Page = async ({ params }: any) => {
   const _params = await params;
